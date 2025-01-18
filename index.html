@@ -1,2 +1,148 @@
-<p>Hello This is Kris</p>
-<p>Welcome to my page</p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrisZhou's Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- navigation -->
+  <nav class="navbar">
+    <h1 class="logo">KrisZhou</h1>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+      </ul>
+  </nav>
+
+  <!-- hero section -->
+  <header id="home" class="hero">
+    <div class="overlay">
+      <h1>Welcome to my Website</h1>
+    </div>
+  </header>
+
+  <!-- About Me  -->
+  <section id="about" class="section about">
+    <div class="container">
+      <!--left side-->
+      <div class="about-left">
+        <div class="placeholder-image">
+          <img src="image/IMG_2858.JPG" alt="Image 1" class="image-item">
+        </div>
+        <p class="quote">Courage is the anthem of mankind</p>
+        <div class="circles">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <!--right side-->
+      <div class="about-right">
+        <h2>Kris Zhou</h2>
+        <p>
+          I love all beautiful things, the Klein Blue, a story with a bizarre and
+          a heartbreaking twist, an afternoon after a good meal leaning back in a
+          recliner with the birds chirping and the sound of the heart beating.
+        </p>
+        <p>
+          Prefer honesty and kindness, and hate selfish and hypocritical people.
+          Love Cantonese food, and I also love Szechuan food. I prefer to cook by
+          myself, and my specialty is lady's fingers.
+        </p>
+        <p>
+          Have watched almost 1000 movies, one third of them are boring movies.
+          At first I find them was worst piece of garbage, but later I watch them as
+          funny movies. My favorite American dramas are 《Breaking Bad》 and
+          《WestWorld》. With 《Naruto》 spent the wholeyouth, but 《Sword Art Online》 
+          and 《Tokyo Ghoul》 are the most unforgettable.
+        </p>
+        <p>
+          Played a lot of games, from website games to mobile games, PC
+          game accounted for the most. The longest played is 《Honor of Kings》,
+          favorite is 《Detroit: Become Human》, and favorite game character is
+          Aventurine from 《Honkai: Star Rail》.
+        </p>
+        <p>
+          I'm also very, very interested in art and music, but I've only tried drawing
+          for now, and I hope to learn a musical instrument someday.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!------------------------------------------ Portfolio  -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="portfolio-nav">
+        <button class="nav-btn" data-category="articles">Articles</button>
+        <button class="nav-btn" data-category="images">Images</button>
+        <button class="nav-btn" data-category="videos">Videos</button>
+      </div>
+      
+      <div class="portfolio-content">
+        <!-- 文章内容 -->
+        <div class="portfolio-category active" id="articles" style="display:block">
+          
+          <div class="article-card">
+            <h3 class="article-title">[Houdini] Stylized Tree Generator</h3>
+            <p class="article-meta">Posted by Ciel on September 14, 2022</p>
+            <p class="article-description">"使用Houdini制作风格化树" 主要讲解了使用Houdini制作风格化树的过程...</p>
+          </div>
+  
+          <div class="article-card">
+            <h3 class="article-title">Light and Color</h3>
+            <p class="article-meta">Posted by Ciel on January 11, 2020</p>
+            <p class="article-description">深入探讨光影的表现及使用技巧...</p>
+          </div>
+  
+        </div>
+  
+        <!-- 图片内容 -->
+        <div class="portfolio-category" id="images" style="display: none;">
+          <img src="image/FBF779FC-01FE-43D1-89A2-2CB1437A13BA.JPG" alt="Image 1" class="image-item">
+          <img src="image/IMG_3684.JPG" alt="Image 2" class="image-item">
+          <img src="image/IMG_3744.JPG" alt="Image 3" class="image-item">
+          <img src="image/IMG_4019.JPG" alt="Image 4" class="image-item">
+          <img src="image/IMG_4027.JPG" alt="Image 5" class="image-item">
+          <img src="image/IMG_4143.JPG" alt="Image 6" class="image-item">
+          <img src="image/IMG_4977.JPG" alt="Image 7" class="image-item">
+          <img src="image/IMG_5004.JPG" alt="Image 8" class="image-item">
+          <img src="image/IMG_5020.JPG" alt="Image 9" class="image-item">
+        </div>
+  
+        <!-- 视频内容 -->
+        
+        <div class="portfolio-category" id="videos" style="display:none">
+          <div class="video-item">
+            <video src="video1.mp4" controls></video>
+          </div>
+          <div class="video-item">
+            <video src="video2.mp4" controls></video>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!---------------------------------------- Contact Me -->
+
+  <!---------------------------------------- 音乐播放器开关 -->
+  <div class="music-control">
+    <button id="music-toggle">🎵</button>
+  </div>
+  
+  <!-- 背景音乐 -->
+  <audio id="background-music" loop autoplay>
+    <source src="塞壬唱片-MSR - 生命流.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <script src="script.js"></script>
+</body>
+</html>
