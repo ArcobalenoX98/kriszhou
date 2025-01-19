@@ -10,11 +10,11 @@ body, html {
   
   .container {
     display: flex;
-    width: 90%;
+    width: 100%;
     max-width: 1280px;
     height: 892px;
     margin: 0 auto;
-    overflow:hidden;
+    overflow:visible;
   }
   
   /* 导航栏样式 */
@@ -64,6 +64,15 @@ body, html {
     position: relative;
     height: 100vh;
     background: url('image/pexels-pixabay-301614.jpg') center/cover no-repeat; /* 替换为背景图路径 */
+    animation:zoomEffect 2s ease-out;
+  }
+
+  @keyframes zoomEffect{
+    0% {transform:scale(1.3);
+    }
+    100%{
+      transform:scale(1);
+    }
   }
   
   .hero .overlay {
@@ -75,18 +84,30 @@ body, html {
     background: rgba(0, 0, 0, 0.5); /* 半透明黑色覆盖层 */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+  }
+  
+  @keyframes moveDown{
+    0% {
+      transform: translateY(-30px);
+      filter:blur(10px);
+      opacity:0;
+    }
+    100% {
+      transform:translate(0px);
+      filter:blur(0);
+      opacity:1;
+    }
   }
   
   .hero h1 {
-    position:absolute;
-    top:200px;
-    left:50%;
-    transform:translateX(-50%);
     color: white;
     font-size: 3rem;
     text-align: center;
     font-weight: bold;
+    opacity:0;
+    animation:moveDown 2s ease-out 2s forwards;
+    margin-top: 300px;
   }
 
 
@@ -108,7 +129,7 @@ body, html {
     height: 600px; 
     background-color: #d3d3d3; /* 灰色背景 */
   }
-  
+
   .quote {
     font-size: 1rem;
     text-align: center;
@@ -189,17 +210,14 @@ body, html {
   position:relative;
   text-align: center;
   width: 100%;
-  margin-left: 0;
   margin-top: 20px;
 }
 
 .portfolio-category {
-  flex:820px;
-  /* display: none; 初始隐藏 */
+  flex:auto;
   margin-top: 40px;
   width:100%;
   height:auto;
-  /* padding: 40px 0; */
   background-color: #f9f9f9;
 }
 
@@ -214,6 +232,8 @@ body, html {
   flex-direction:column;
   gap: 20px;
   padding: 20px;
+  overflow-y:auto;
+  overflow-x: hidden;
 }
 
 .article-card {
@@ -233,17 +253,20 @@ body, html {
 .article-title {
   font-size: 1.5rem;
   font-weight: bold;
+  text-align:left;
   margin-bottom: 10px;
 }
 
 .article-meta {
   font-size: 0.9rem;
   color: #666;
+  text-align:left;
   margin-bottom: 15px;
 }
 
 .article-description {
   font-size: 1rem;
+  text-align:left;
   color: #333;
 }
 
@@ -254,7 +277,7 @@ body, html {
   padding: 20px;
   overflow-y:auto;
   overflow-x:hidden;
-  width:100%
+  width:100%;
 
 }
 
@@ -264,8 +287,14 @@ body, html {
   margin-bottom: 15px;
   width: 100%; /* 自动适应列宽 */
   border-radius: 5px;
+  box-sizing: border-box;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+}
+
+.image-item img{
+  width:100%;
+  height:auto;
 }
 
 .image-item:hover {
@@ -277,18 +306,30 @@ body, html {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
+  overflow-x:hidden;
+  overflow-y:auto;
 }
 
 .video-item {
   position: relative;
   overflow: hidden;
+  background-color:white;
   border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding:20px;
   transition: transform 0.3s ease, z-index 0.3s ease;
 }
 
 .video-item video {
   width: 100%;
   border-radius: 5px;
+}
+
+.video-title {
+  font-size:1rem;
+  font-weight: bold;
+  text-align:left;
+  margin-bottom:10px;
 }
 
 
